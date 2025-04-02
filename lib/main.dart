@@ -53,6 +53,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Happy Kids Management'),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -76,27 +80,14 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     _buildSquareCard(
                       context,
-                      'Admin Login',
-                      'assets/images/admin_icon.png',
-                      const Color(0xFFFFE0B2), // Warm orange
-                      () => Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const AdminScreen()),
-                      ),
+                      'Jar',
+                      'assets/images/jar_icon.png',
+                      const Color(0xFFC8E6C9), // Light green
+                      () => _launchURL('https://app.tnhappykids.in'),
                     ),
                     _buildSquareCard(
                       context,
-                      'User Login',
-                      'assets/images/user_icon.png',
-                      const Color(0xFFB2DFDB), // Soft teal
-                      () => Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const UserScreen()),
-                      ),
-                    ),
-                    _buildSquareCard(
-                      context,
-                      'Live Monitoring',
+                      'Monitoring',
                       'assets/images/monitoring_icon.png',
                       const Color(0xFFFFCDD2), // Soft pink
                       () => Navigator.push(
@@ -106,12 +97,22 @@ class HomeScreen extends StatelessWidget {
                     ),
                     _buildSquareCard(
                       context,
-                      'JAR',
-                      'assets/images/jar_icon.png',
-                      const Color(0xFFC8E6C9), // Light green
+                      'User',
+                      'assets/images/user_icon.png',
+                      const Color(0xFFB2DFDB), // Soft teal
                       () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const JarScreen()),
+                        MaterialPageRoute(builder: (context) => const UserScreen()),
+                      ),
+                    ),
+                    _buildSquareCard(
+                      context,
+                      'Admin',
+                      'assets/images/admin_icon.png',
+                      const Color(0xFFFFE0B2), // Warm orange
+                      () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const AdminScreen()),
                       ),
                     ),
                   ],
