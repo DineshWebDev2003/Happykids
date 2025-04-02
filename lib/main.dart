@@ -83,7 +83,10 @@ class HomeScreen extends StatelessWidget {
                       'Jar',
                       'assets/images/jar_icon.png',
                       const Color(0xFFC8E6C9), // Light green
-                      () => _launchURL('https://app.tnhappykids.in'),
+                      () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const JarScreen()),
+                      ),
                     ),
                     _buildSquareCard(
                       context,
